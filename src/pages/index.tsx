@@ -45,10 +45,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
     </button>
 
     <form
-      onSubmit={async e => {
-        e.preventDefault();
-        updateTodo(document.getElementById('updateinput').value);
-      }}
+      onSubmit={updateTodo(document.getElementById('updateinput').value)}
       className={styles.addTodo}
     >
       <input
