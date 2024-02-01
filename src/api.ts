@@ -38,12 +38,12 @@ export const toggleTodo = async (todo: Todo) => {
   mutate(todoPath);
 };
 
-export const updateTodo = async (text: string) => {
+export const updateTodo = async (todo: Todo) => {
   mutate(
     todoPath,
     todos =>
       todos.map(t =>
-        t.id === todo.id ? { ...todo, text: text } : t,
+        t.id === todo.id ? { ...todo, text: t.text } : t,
       ),
     false,
   );
