@@ -25,6 +25,7 @@ export const TodoList: React.FC = () => {
 };
 
 const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
+  const [text, setText] = useState("");
   <li className={styles.todo}>
     <label
       className={`${styles.label} ${todo.completed ? styles.checked : ""}`}
@@ -43,7 +44,6 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
       ✕
     </button>
 
-    const [text, setText] = useState("");
     <form
       onSubmit={async e => {
         e.preventDefault();
@@ -53,7 +53,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
     >
       <input
         className={styles.input}
-        value=text
+        value={todo.text}
         onChange={e => setText(e.target.value)}
       />
       <button className={styles.addButton}>Update</button>
