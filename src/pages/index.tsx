@@ -25,8 +25,8 @@ export const TodoList: React.FC = () => {
 };
 
 const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
-  const [text, setText] = useState("");
   <li className={styles.todo}>
+    const [text, setText] = useState("");
     <label
       className={`${styles.label} ${todo.completed ? styles.checked : ""}`}
     >
