@@ -38,6 +38,22 @@ export const toggleTodo = async (todo: Todo) => {
   mutate(todoPath);
 };
 
+export const updateTodo = async (todo: Todo) => {
+  mutate(
+    todoPath,
+    todos =>
+      todos.map(t =>
+        t.id === todo.id ? { ...todo, text: !t.text } : t,
+      ),
+    false,
+  );
+  await fetch(`${todoPath}?todoId=${todo.id}`, {
+    method: "PUT",
+    body: JSON.stringify({ text: !todo.text }),
+  });
+  mutate(todoPath);
+};
+
 export const deleteTodo = async (id: string) => {
   mutate(todoPath, todos => todos.filter(t => t.id !== id), false);
   await fetch(`${todoPath}?todoId=${id}`, { method: "DELETE" });
