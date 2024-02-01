@@ -43,6 +43,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
       ✕
     </button>
 
+    const [text, setText] = useState("");
     <form
       onSubmit={async e => {
         e.preventDefault();
