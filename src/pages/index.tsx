@@ -29,6 +29,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
     <label
       className={`${styles.label} ${todo.completed ? styles.checked : ""}`}
     >
+      
       <input
         type="checkbox"
         checked={todo.completed}
@@ -37,10 +38,25 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
       />
       {todo.text}
     </label>
-
+    
     <button className={styles.deleteButton} onClick={() => deleteTodo(todo.id)}>
       ✕
     </button>
+
+    <form
+      onSubmit={async e => {
+        e.preventDefault();
+        updateTodo(text);
+      }}
+      className={styles.addTodo}
+    >
+      <input
+        className={styles.input}
+        value={todo.text}
+        onChange={e => setText(e.target.value)}
+      />
+      <button className={styles.addButton}>Update</button>
+    </form>
   </li>
 );
 
