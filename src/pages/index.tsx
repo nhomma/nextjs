@@ -45,7 +45,6 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
     </button>
 
     <form
-      onSubmit={updateTodo(document.getElementById('updateinput').value)}
       className={styles.addTodo}
     >
       <input
@@ -53,7 +52,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
         className={styles.input}
         value={todo.text}
       />
-      <button className={styles.addButton}>Update</button>
+      <button className={styles.addButton} onClick={updateTodo(document.getElementById('updateinput').value}>Update</button>
     </form>
   </li>
 );
