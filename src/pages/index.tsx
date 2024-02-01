@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Head from "next/head";
 import { useMemo, useState } from "react";
-import { createTodo, deleteTodo, toggleTodo, useTodos } from "../api";
+import { createTodo, deleteTodo, toggleTodo, useTodos, updateTodo } from "../api";
 import styles from "../styles/Home.module.css";
 import { Todo } from "../types";
 
