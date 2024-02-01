@@ -38,18 +38,18 @@ export const toggleTodo = async (todo: Todo) => {
   mutate(todoPath);
 };
 
-export const updateTodo = async (id: string, todo: Todo) => {
+export const updateTodo = async (id: string, text: string) => {
   mutate(
     todoPath,
     todos =>
       todos.map(t =>
-        t.id === id ? { ...todo, text: t.text } : t,
+        t.id === id ? { ...todo, text: text } : t,
       ),
     false,
   );
   await fetch(`${todoPath}?todoId=${id}`, {
     method: "PUT",
-    body: JSON.stringify({ text: !todo.text }),
+    body: JSON.stringify({ text: text }),
   });
   mutate(todoPath);
 };
