@@ -45,7 +45,6 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
     >
       <input
         className={styles.input}
-        value={todo.text}
       />
       <button className={styles.addButton}>Update</button>
     </form>
