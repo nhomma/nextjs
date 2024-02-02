@@ -51,7 +51,9 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
         className={styles.input}
         value={todo.text}
       />
-      <HTMLInputElement>document.getElementById("updateinput")).value
+      <script>
+        <HTMLInputElement>document.getElementById("updateinput")).value
+      </script>
       <button className={styles.addButton} onClick={() => updateTodo(todo, '')}>Update</button>
     </form>
   </li>
