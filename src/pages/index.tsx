@@ -44,7 +44,9 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
       className={styles.addTodo}
     >
       <input
-        className={styles.input}
+        type="text"
+        id="updatetext"
+        name="updatetext"
         value={todo.text}
         onChange={e => console.log('changed')}
       />
