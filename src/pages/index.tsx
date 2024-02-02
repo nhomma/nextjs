@@ -48,7 +48,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
         id="updatetext"
         name="updatetext"
         defaultValue={todo.text}
-        onChange={e => console.log('changed')}
+        onChange={e => console.log(e.target.value)}
       />
       <button className={styles.addButton}>Update</button>
     </form>
