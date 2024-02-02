@@ -43,7 +43,6 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
       onSubmit={async e => {
         e.preventDefault();
         console.log(e.target.value);
-        updateTodo(todo, '');
       }}
       className={styles.addTodo}
     >
