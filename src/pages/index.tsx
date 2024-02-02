@@ -38,24 +38,17 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
       />
       {todo.text}
     </label>
-    
+
+    <input
+      className={styles.input}
+      value={todo.text}
+    />
+    <button className={styles.addButton}>Update</button>
+
     <button className={styles.deleteButton} onClick={() => deleteTodo(todo.id)}>
       ✕
     </button>
 
-    <form
-      className={styles.addTodo}
-    >
-      <input
-        id = "updateinput"
-        className={styles.input}
-        value={todo.text}
-      />
-      <script>
-        <HTMLInputElement>document.getElementById("updateinput")).value
-      </script>
-      <button className={styles.addButton} onClick={() => updateTodo(todo, '')}>Update</button>
-    </form>
   </li>
 );
 
