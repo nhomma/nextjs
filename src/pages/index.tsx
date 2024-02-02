@@ -42,7 +42,8 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
     <form
       onSubmit={async e => {
         e.preventDefault();
-        console.log(e.target.value);
+        const formData = new FormData(e.target);
+        console.log(Object.fromEntries(formData.entries()));
       }}
       className={styles.addTodo}
     >
