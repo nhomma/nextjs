@@ -38,7 +38,7 @@ export const toggleTodo = async (todo: Todo) => {
   mutate(todoPath);
 };
 
-export const updateTodo = async (todo: Todo, text: any) => {
+export const updateTodo = async (todo: Todo, text: string) => {
   mutate(
     todoPath,
     todos =>
