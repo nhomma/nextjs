@@ -52,7 +52,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
         className={styles.input}
         value={todo.text}
       />
-      <button className={styles.addButton} onClick={() => updateTodo(todo, ''}>Update</button>
+      <button className={styles.addButton} onClick={() => updateTodo(todo, '')}>Update</button>
     </form>
   </li>
 );
