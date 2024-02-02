@@ -42,6 +42,8 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
     <form
       onSubmit={() => updateTodo(todo, '')}
       className={styles.addTodo}
+      value={todo.text}
+      onChange={}
     >
       <input
         className={styles.input}
