@@ -56,7 +56,7 @@ const UpdateForm: React.FC<{ todo: Todo }> = ({ todo }) => {
       onSubmit={async e => {
         e.preventDefault();
         console.log(text);
-        updateTodo(todo, todo.id);
+        updateTodo(todo, text);
       }}
       className={styles.addTodo}
     >
