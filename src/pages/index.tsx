@@ -39,7 +39,7 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
       {todo.text}
     </label>
 
-    <UpdateForm />
+    <UpdateForm todo={todo} />
 
     <button className={styles.deleteButton} onClick={() => deleteTodo(todo.id)}>
       ✕
@@ -48,16 +48,15 @@ const TodoItem: React.FC<{ todo: Todo }> = ({ todo }) => (
   </li>
 );
 
-const UpdateForm = () => {
+const UpdateForm: React.FC<{ todo: Todo }> = ({ todo }) => {
   const [text, setText] = useState("");
 
   return (
     <form
       onSubmit={async e => {
         e.preventDefault();
-        const form = e.target;
-        console.log(typeof form);
-        console.log(JSON.stringify(form, null, 2));
+        console.log(text);
+        updateTodo(todo, todo.id);
       }}
       className={styles.addTodo}
     >
@@ -66,7 +65,7 @@ const UpdateForm = () => {
         id="updatetext"
         name="updatetext"
         defaultValue={todo.text}
-        onChange={e => console.log(e.target.value)}
+        onChange={e => setText(e.target.value)}
       />
       <button className={styles.addButton}>Update</button>
     </form>
